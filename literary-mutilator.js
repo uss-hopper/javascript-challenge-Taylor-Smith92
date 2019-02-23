@@ -16,10 +16,15 @@ function burrito() {
 	let splitting = words.split(" ");
 	//console.log(splitting);
 	let burritoReplace = splitting.map((index) => {
-		if(index.toLowerCase() === "taco" || "tacos") {
+		if(index === "taco") {
 			index = index.replace("taco", "burrito");
-		} else return index;
-		console.log(index);
+		}
+
+		if(index === "tacos") {
+			index = index.replace("tacos", "burritos");
+		}
+
+		return(index);
 	});
 
 	//console.log(burritoReplace);
