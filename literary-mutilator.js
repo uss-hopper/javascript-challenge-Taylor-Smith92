@@ -10,14 +10,19 @@ target.fetch("https://jsonplaceholder.typicode.com/posts/1", {
 
 
 
-function lookInScriptJsLine11(split) {
+function burrito() {
 	let tacoWords = document.getElementById("taco-words");
 	let words = tacoWords.innerHTML;
 	let splitting = words.split(" ");
+	//console.log(splitting);
 	let burritoReplace = splitting.map((index) => {
-		index = index.replace("taco", "burrito");
+		if(index.toLowerCase() === "taco" || "tacos") {
+			index = index.replace("taco", "burrito");
+		} else return index;
 		console.log(index);
 	});
+
+	//console.log(burritoReplace);
 
 
 	let target = document.getElementById("taco-words");
