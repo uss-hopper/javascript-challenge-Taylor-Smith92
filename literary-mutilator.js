@@ -15,16 +15,39 @@ function burrito() {
 	let words = tacoWords.innerHTML;
 	let splitting = words.split(" ");
 	//console.log(splitting);
-	let burritoReplace = splitting.map((index) => {
+	let burritoReplace = splitting.reduce((accumulator, index) => {
+		index = index.toString();
 		if(index === "taco") {
 			index = index.replace("taco", "burrito");
+			console.log(index);
+		} else if(index === "burrito") {
+			index = index.replace("burrito", "taco");
+			console.log(index);
 		}
 
 		if(index === "tacos") {
 			index = index.replace("tacos", "burritos");
+			console.log(index);
+		} else if(index === "burritos") {
+			index = index.replace("burritos", "tacos");
+			console.log(index);
 		}
 
-		return(index);
+		if(index === "Tacos") {
+			index = index.replace("Tacos", "Burritos");
+			console.log(index);
+		} else if(index === "Burritos") {
+			index = index.replace("Burritos", "Tacos");
+			console.log(index);
+		}
+
+		if(index === "tacos.") {
+			index = index.replace("tacos.", "burritos.")
+		} else if(index === "burritos.") {
+			index = index.replace("burritos.", "tacos.")
+		}
+
+		return accumulator + " " + index;
 	});
 
 	//console.log(burritoReplace);
