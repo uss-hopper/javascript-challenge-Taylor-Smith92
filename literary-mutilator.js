@@ -43,6 +43,11 @@ function burrito() {
 		} else if(index === "burritos.") {
 			index = index.replace("burritos.", "tacos.")
 		}
+		if(index === "Tacos,") {
+			index = index.replace("Tacos,", "Burritos,")
+		} else if(index === "Burritos,") {
+			index = index.replace("Burritos,", "Tacos,")
+		}
 		return accumulator + " " + index;
 	});
 
