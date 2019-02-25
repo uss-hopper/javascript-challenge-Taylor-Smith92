@@ -1,13 +1,19 @@
-/**let target = document.getElementById("target");
+function spicyIn() {
+	let spicyWords = document.getElementById("spicy-words");
+	spicyWords.style.color = "red";
+}
 
-target.fetch("https://jsonplaceholder.typicode.com/posts/1", {
-	method: "GET",
-} )
-	.then(response => response.json())
-	.then(json => console.log(json))
-**/
+function spicyOut() {
+	let spicyWords = document.getElementById("spicy-words");
+	spicyWords.style.color = "green";
+}
 
 
+function movement() {
+	let fire = document.getElementById("fire-words");
+	fire.style.color = "white";
+	fire.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ")";
+}
 
 
 function burrito() {
@@ -19,39 +25,26 @@ function burrito() {
 		index = index.toString();
 		if(index === "taco") {
 			index = index.replace("taco", "burrito");
-			console.log(index);
 		} else if(index === "burrito") {
 			index = index.replace("burrito", "taco");
-			console.log(index);
 		}
-
 		if(index === "tacos") {
 			index = index.replace("tacos", "burritos");
-			console.log(index);
 		} else if(index === "burritos") {
 			index = index.replace("burritos", "tacos");
-			console.log(index);
 		}
-
 		if(index === "Tacos") {
 			index = index.replace("Tacos", "Burritos");
-			console.log(index);
 		} else if(index === "Burritos") {
 			index = index.replace("Burritos", "Tacos");
-			console.log(index);
 		}
-
 		if(index === "tacos.") {
 			index = index.replace("tacos.", "burritos.")
 		} else if(index === "burritos.") {
 			index = index.replace("burritos.", "tacos.")
 		}
-
 		return accumulator + " " + index;
 	});
-
-	//console.log(burritoReplace);
-
 
 	let target = document.getElementById("taco-words");
 	target.innerHTML = burritoReplace;
