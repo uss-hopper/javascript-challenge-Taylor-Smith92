@@ -1,7 +1,7 @@
 window.onload = () => {
 	let spicyWords = document.getElementById("spicy-words");
 	spicyWords.style.color = "green";
-}
+};
 
 function spicyIn() {
 	let spicyWords = document.getElementById("spicy-words");
